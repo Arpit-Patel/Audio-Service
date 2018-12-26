@@ -1,3 +1,6 @@
+# credentials
+config
+
 # Logs
 logs
 *.log
@@ -63,6 +66,3 @@ typings/
 
 # next.js build output
 .next
-
-# credentials
-config/config.js
