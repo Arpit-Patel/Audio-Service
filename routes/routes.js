@@ -3,7 +3,7 @@ var router = express.Router();
 
 var audioControler = require('../api/controllers/audioController')
 
-/* GET home page. */
+/* Fetch audio data */
 router.post('/', audioControler.fetchSong)
 
 router.get('/ping', (req, res, next) => {

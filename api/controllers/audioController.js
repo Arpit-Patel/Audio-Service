@@ -12,11 +12,11 @@ audioController.fetchSong = (req, res, next) => {
         start = 0
     }
     getAudioData(start, youtubeVideoUrl)
-        .then(() => {
-            res.send(200)
+        .then((data) => {
+            res.status(200).send(data)
         })
         .catch(err => {
-            res.send(400, err)
+            res.status(400).send(err)
         });
 
 }
