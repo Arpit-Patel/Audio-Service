@@ -9,18 +9,21 @@ WORKDIR /usr/src/app
 ADD package*.json ./
 
 # Update package list
-RUN add-apt-repository ppa:mc3man/trusty-media
-RUN apt-get update -y
-RUN apt-get dist-upgrade -y
+RUN sudo apt-get install software-properties-common
+RUN sudo add-apt-repository ppa:mc3man/trusty-media
+RUN sudo apt-get update -y
+RUN sudo apt-get dist-upgrade -y
 
 # Update packages
-RUN apt-get update -y
+RUN sudo apt-get update -y
 
 # Install ffmpeg
-RUN apt-get install -y ffmpeg
+RUN sudo apt-get install -y ffmpeg
 
 # Install youtube-dl
-RUN apt-get install -y youtube-dl
+RUN sudo apt-get install -y youtube-dl
+
+RUN sudo apt-get install -y npm
 
 RUN npm install 
 # If you are building your code for production
