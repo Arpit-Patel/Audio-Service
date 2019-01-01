@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM node:alpine
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -9,8 +9,8 @@ WORKDIR /usr/src/app
 ADD package*.json ./
 
 # Update package list
-RUN sudo apt-get install software-properties-common
-RUN sudo add-apt-repository ppa:mc3man/trusty-media
+RUN sudo apt-get install -y software-properties-common
+RUN sudo add-apt-repository -y ppa:mc3man/trusty-media
 RUN sudo apt-get update -y
 RUN sudo apt-get dist-upgrade -y
 
@@ -25,12 +25,12 @@ RUN sudo apt-get install -y youtube-dl
 
 RUN sudo apt-get install -y npm
 
-RUN npm install 
+RUN sudo npm install 
 # If you are building your code for production
 # RUN npm install --only=production
 
 # Bundle app source
 ADD . .
 
-EXPOSE 3000
+EXPOSE 8080
 CMD [ "npm", "start" ]
