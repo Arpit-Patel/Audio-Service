@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM ubuntu:14.04
 
 # Create app directory
 WORKDIR /usr/src/app
