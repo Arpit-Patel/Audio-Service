@@ -4,10 +4,10 @@ var router = express.Router();
 var audioControler = require('../api/controllers/audioController')
 
 /* Fetch audio data */
-router.post('/', audioControler.fetchSong)
+router.post('/identify', audioControler.fetchSong)
 
-router.get('/ping', (req, res, next) => {
-  res.send("pong")
+router.get('/', (req, res, next) => {
+  res.send("Welcome to Music Identification Service - By Arpit Patel")
 })
 
 module.exports = router;
